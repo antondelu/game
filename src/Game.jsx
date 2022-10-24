@@ -1,6 +1,8 @@
 import React, { useMemo, useState } from "react";
 const options = ["Piedra", "Papel", "Tijera"];
 export default function Game() {
+  const [playerOne, setPlayerOne] = useState("");
+  const [playerTwo, setPlayerTwo] = useState("");
   const [selected, setSelected] = useState("");
   const [computedSelected, setComputedSelected] = useState("");
   const play = () => {
@@ -27,6 +29,22 @@ export default function Game() {
   return (
     <div>
       <div>
+        <label htmlFor=""> Jugador uno</label>
+        <input
+          type="text"
+          placeholder="Nombre"
+          onChange={(e) => setPlayerOne(e.target.value)}
+        />
+      </div>
+      <div>
+        <label htmlFor="">Jugador dos</label>
+        <input
+          type="text"
+          placeholder="Nombre"
+          onChange={(e) => setPlayerTwo(e.target.value)}
+        />
+      </div>
+      <div>
         <button onClick={() => setSelected("Piedra")}>Piedra</button>
         <button onClick={() => setSelected("Papel")}>Papel</button>
         <button onClick={() => setSelected("Tijera")}>Tijera</button>
@@ -34,8 +52,13 @@ export default function Game() {
       <br />
 
       <button onClick={play}>jugar</button>
-      <p>Seleccionaste: {selected}</p>
-      <p>La computadora selecciono: {computedSelected}</p>
+      <p>
+        <strong> Jugardor 1 {playerOne}:</strong> {selected}
+      </p>
+      <p>
+        {" "}
+        <strong> Jugardor 2 {playerTwo}:</strong> {computedSelected}
+      </p>
       <div>{result}</div>
     </div>
   );
