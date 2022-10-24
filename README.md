@@ -1,5 +1,5 @@
-## Para inciarlizar este proyecto :
+## Para correr este proyecto, ejecutar los siguientes comandos :
 
-npm install
-
-npm start
+- git clone
+- npm install
+- npm start
