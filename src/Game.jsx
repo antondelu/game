@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from "react";
 const options = ["Piedra", "Papel", "Tijera"];
 export default function Game() {
-  const [playerOne, setPlayerOne] = useState("");
-  const [playerTwo, setPlayerTwo] = useState("");
+  const [playerOne, setPlayerOne] = useState();
+  const [playerTwo, setPlayerTwo] = useState();
   const [selected, setSelected] = useState("");
   const [computedSelected, setComputedSelected] = useState("");
   const play = () => {
@@ -21,7 +21,7 @@ export default function Game() {
         (computedSelected === "Papel" && selected === "Piedra") ||
         (computedSelected === "Tijeta" && selected === "papel")
       ) {
-        return "Gano la computadora";
+        return `Gano la ${playerTwo}`;
       }
       return "Ganaste!";
     }
